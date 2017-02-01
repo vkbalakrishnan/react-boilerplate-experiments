@@ -12,6 +12,7 @@ import { createStructuredSelector } from 'reselect';
 import { selectSet, selectQuestions } from './selectors';
 import { loadQuestions } from './actions';
 import QuestionSet from 'components/QuestionSet';
+import QuestionWizard from 'components/QuestionWizard';
 import QnItem from 'containers/QnItem';
 
 export class Assessment extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
@@ -33,7 +34,7 @@ export class Assessment extends React.PureComponent { // eslint-disable-line rea
           ]}
         />
         
-        <QuestionSet items={this.props.questions} component={QnItem}></QuestionSet>
+        <QuestionWizard items={this.props.questions} component={QnItem}></QuestionWizard>
       </div>
     );
   }

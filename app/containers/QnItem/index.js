@@ -18,7 +18,7 @@ export class QnItem extends React.PureComponent { // eslint-disable-line react/p
     	content = (
         <div>
       		<p>Q) {this.props.item&&this.props.item.question ? this.props.item.question : ''}</p>
-          <OptionItem type={this.props.item.type} options={this.props.item.options} name={this.props.item.question_id}></OptionItem>
+          <OptionItem type={this.props.item.type} options={this.props.item.options} name={'q'+this.props.item.id}></OptionItem>
         </div>
   		);
     } else {

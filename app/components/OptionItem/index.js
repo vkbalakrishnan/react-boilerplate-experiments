@@ -14,10 +14,10 @@ function OptionItem(props) {
 	if(props.type) {
 		switch (props.type) {
 			case 'singlechoice_input': 
-				content = (<Input type="text" name={props.name} label={props.name} />);
+				content = (<Input name={props.name} />);
 				break;
 			case 'ltr_value' : 
-				content = (<Input type="number" name={props.name}/>);
+				content = (<Input name={props.name} />);
 				break;
 			case 'singlechoice' :
 				content = (<ul>
