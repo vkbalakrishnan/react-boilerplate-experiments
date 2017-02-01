@@ -7,21 +7,27 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ListItem from 'components/ListItem';
+import OptionItem from 'components/OptionItem';
+import Wrapper from './Wrapper';
 
 export class QnItem extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
   	console.log(this.props);
-    const item = {
-    	con : 'peeee',
-    	item: this.props.item
-    }
-  	// console.log('item', item);
+    var content;
+    if(this.props && this.props.item) {
+    	content = (
+        <div>
+      		<p>Q) {this.props.item&&this.props.item.question ? this.props.item.question : ''}</p>
+          <OptionItem type={this.props.item.type} options={this.props.item.options} name={this.props.item.question_id}></OptionItem>
+        </div>
+  		);
+    } else {
+      console.log('no item', this.props.item);
 
-  	const content = (
-  		<p>Q) {item.item&&item.item.question ? item.item.question : ''}</p>
-		);
+      content = null;
+    }
     return (
-      <ListItem item={content} />
+      <Wrapper>{content}</Wrapper>
     );
   }
 }

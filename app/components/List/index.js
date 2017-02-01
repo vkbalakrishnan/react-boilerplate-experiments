@@ -3,6 +3,8 @@ import React from 'react';
 import Ul from './Ul';
 import Wrapper from './Wrapper';
 
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 function List(props) {
   const ComponentToRender = props.component;
   let content = (<div></div>);
@@ -20,7 +22,12 @@ function List(props) {
   return (
     <Wrapper>
       <Ul>
+        <ReactCSSTransitionGroup
+        transitionName="example"
+        transitionEnterTimeout={1500}
+        transitionLeaveTimeout={3000}>
         {content}
+        </ReactCSSTransitionGroup>
       </Ul>
     </Wrapper>
   );

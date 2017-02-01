@@ -19,9 +19,8 @@ function assessmentReducer(state = initialState, action) {
       return state
       	.set('setname', action.setname);
     case LOAD_QUESTIONS_SUCCESS:
-    	console.log('reducer', action);
     	return state
-    		.set('questions', action.questions);
+    		.set('questions', _.sortBy(action.questions, 'id'));
     default:
       return state;
   }
