@@ -13,7 +13,6 @@ import {
 const initialState = fromJS({setname : 'questions'});
 
 function assessmentReducer(state = initialState, action) {
-	console.log('assessment action', action);
   switch (action.type) {
     case LOAD_QUESTIONS:
       return state

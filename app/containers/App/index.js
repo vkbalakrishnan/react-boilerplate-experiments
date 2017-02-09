@@ -14,7 +14,7 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 
 const AppWrapper = styled.div`
-  max-width: calc(768px + 16px * 2);
+  max-width: calc(960px + 16px * 2);
   margin: 0 auto;
   display: flex;
   min-height: 100%;
@@ -23,6 +23,7 @@ const AppWrapper = styled.div`
 `;
 
 function App(props) {
+  
   return (
     <AppWrapper>
       <Helmet
@@ -32,7 +33,8 @@ function App(props) {
           { name: 'description', content: 'A React.js Boilerplate application' },
         ]}
       />
-      <Header />
+      
+      <Header location={props.location.pathname}/>
       {React.Children.toArray(props.children)}
       <Footer />
     </AppWrapper>

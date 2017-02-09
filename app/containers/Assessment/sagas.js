@@ -9,8 +9,9 @@ import {selectSet} from './selectors';
 import request from 'utils/request';
 
 
-export function* getQuestions() {
+export function* getQuestions(yo) {
   // Select username from store
+  if(yo) console.log('test', yo);
   const setname = yield select(selectSet());
   const requestURL = `http://localhost:3099/${setname}.json`;
 

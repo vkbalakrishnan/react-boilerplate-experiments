@@ -9,7 +9,6 @@ import {Row, Input} from 'react-materialize';
 
 
 function OptionItem(props) {
-	console.log(props);
 	let content = (<div></div>);
 	if(props.type) {
 		switch (props.type) {
@@ -34,7 +33,6 @@ function OptionItem(props) {
 				</ul>)
 				break;
 			default : 
-				console.log(props.type);
 				content = (<p>This type not defined.</p>)
 		}
 	}

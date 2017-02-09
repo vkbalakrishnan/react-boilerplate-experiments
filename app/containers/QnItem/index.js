@@ -12,7 +12,6 @@ import Wrapper from './Wrapper';
 
 export class QnItem extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
-  	console.log(this.props);
     var content;
     if(this.props && this.props.item) {
     	content = (

@@ -13,6 +13,12 @@ const btnStyleRight = {
 	'margin' : '3px'
 };
 
+const webkitBox = {
+	'display' : 'grid',
+	height : '210px',
+	overflow : 'hidden'
+}
+
 class QuestionWizard extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
 	constructor(props) {
 		super(props);
@@ -43,16 +49,24 @@ class QuestionWizard extends React.PureComponent { // eslint-disable-line react/
 
 		if(this.props.items) {
 			content = (<ComponentToRender key={this.state.idx} item={this.props.items[this.state.idx]} />);
+			// content = (<div><ComponentToRender key={this.state.idx} item={this.props.items[this.state.idx]} /><ComponentToRender key={this.state.idx+1} item={this.props.items[this.state.idx+1]} /></div>);
 		}
 		
   	return (
 	    <div>
-	    	<ReactCSSTransitionGroup
-          transitionName="example"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}>
-	    		{content}
-	    	</ReactCSSTransitionGroup>
+	    	<div style={webkitBox}>
+		    	<ReactCSSTransitionGroup
+	          transitionName="example"
+	          transitionAppear={false}
+	          transitionEnter={true}
+	      		transitionLeave={true}
+	          transitionAppearTimeout={0}
+	      		transitionEnterTimeout={300}
+	      		transitionLeaveTimeout={300}
+	      		>
+		    		{content}
+		    	</ReactCSSTransitionGroup>
+		    </div>
 	    	<Row>
 	    		<Button waves='light' style={btnStyleRight} onClick={() => this.nextQuestion()}>Next</Button>
 	    		<Button waves='light' style={{'margin': '3px'}} className='yellow' onClick={() => this.setState({idx : 0})}>First</Button>

@@ -76,6 +76,5 @@ export default function createRoutes(store) {
       },
     },
   ];
-  console.log(ret);
   return ret;
 }

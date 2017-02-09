@@ -27,4 +27,31 @@ injectGlobal`
     font-family: Georgia, Times, 'Times New Roman', serif;
     line-height: 1.5em;
   }
+  .example-enter {
+  }
+
+  .example-enter.example-enter-active {
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-name: fadeInRight;
+    animation-name: fadeInRight;
+  }
+
+  .example-leave {
+    -webkit-animation-duration: 300ms;
+    animation-duration: 300ms;
+    -webkit-animation-name: fadeOutLeft;
+    animation-name: fadeOutLeft;
+
+  }
+
+  .example-leave.example-leave-active {
+  }
+
+  .example-appear {
+  }
+
+  .example-appear.example-appear-active {
+    display:none;
+  }
 `;
